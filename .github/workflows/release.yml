@@ -19,10 +19,11 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v4
 
-      - name: Build/Release Identiflix
+      - name: Set up node and NPM
         uses: actions/setup-node@v3
         with:
           node-version: 20
+      - name: Build/Release Identiflix
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run publish
