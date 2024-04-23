@@ -13,8 +13,6 @@ import { rendererConfig } from './webpack.renderer.config';
 
 const config: ForgeConfig = {
   packagerConfig: {
-    name: 'Identiflix',
-    executableName: 'identiflix',
     asar: true,
   },
   rebuildConfig: {},
