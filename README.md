@@ -14,7 +14,7 @@ There is a GitHub action workflow (`.github/workflows/release.yml`) that builds 
 2. Run `npm install` to update `package-lock.json`
 3. Commit and create a tag `git tag v1.0.0`
 4. Push the tags `git push && git push --tags` this will trigger the build and create a new release
-5. Go to [release](https://github.com/auth0-developer-hub/identiflix-app/releases) and find the draft release. Edit and publish.
+5. Go to [release](https://github.com/bajcmartinez/identiflix-app/releases) and find the draft release. Edit and publish.
 
 ## Local development setup
 
