@@ -4,7 +4,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css';
-import { StrictMode } from 'react'
 import Welcome from './pages/welcome'
 import Login from './pages/login'
 import Browse from './pages/browse'

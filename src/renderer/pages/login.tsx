@@ -2,20 +2,20 @@ import { useEffect, useState } from 'react'
 import { DeviceCodeResponse } from '../../types/auth'
 import QRCode from "react-qr-code"
 import { NavLink, useNavigate } from 'react-router-dom'
+import { startAuthFlow, verifyAuthFlow } from '../services/auth0'
 
 export default function () {
   const [loginData, setLoginData] = useState<DeviceCodeResponse | undefined>();
   const navigate = useNavigate();
 
   async function login() {
-    const response = await electronAPI.startAuthFlow();
+    const response = await startAuthFlow();
     setLoginData(response);
   }
 
   async function validateAuth() {
-    const response = await electronAPI.verifyAuthFlow(loginData.device_code);
+    const response = await verifyAuthFlow(loginData.device_code);
     if (response.loggedIn) {
-      console.log('Logged in');
       navigate('/browse')
     }
   }
