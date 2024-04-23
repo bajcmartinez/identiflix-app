@@ -15,7 +15,7 @@ if (require('electron-squirrel-startup')) {
 const handleAuthStart = async () => {
   const options = {
     method: 'POST',
-    url: 'https://dev-bajcmartinez.eu.auth0.com/oauth/device/code',
+    url: 'https://auth-test.gotolcs.com/oauth/device/code',
     headers: {'content-type': 'application/x-www-form-urlencoded'},
     data: {client_id: '8dfAuyOuUbxy7VJ2nOIL6GmwMAOIGuU2', scope: 'SCOPE'}
   };
@@ -32,7 +32,7 @@ const handleAuthStart = async () => {
 const handleAuthVerification = async (event: IpcMainInvokeEvent, deviceCode: string): Promise<DeviceCodeActivationResponse> => {
   const options = {
     method: 'POST',
-    url: 'https://dev-bajcmartinez.eu.auth0.com/oauth/token',
+    url: 'https://auth-test.gotolcs.com/oauth/token',
     headers: {'content-type': 'application/x-www-form-urlencoded'},
     data: new URLSearchParams({
       grant_type: 'urn:ietf:params:oauth:grant-type:device_code',

@@ -1,0 +1,28 @@
+name: Build/release
+on:
+  push:
+    tags:
+      - "v*.*.*"
+jobs:
+  release:
+    runs-on: ${{ matrix.job.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        job:
+          - { os: "macOS-latest",   arch: "x64",    artifact_prefix: "macos"   }
+          - { os: "windows-latest", arch: "x64",    artifact_prefix: "windows" }
+          - { os: "ubuntu-latest",  arch: "x64",    artifact_prefix: "linux"   }
+          - { os: "ubuntu-latest",  arch: "arm64",  artifact_prefix: "arm"     }
+          - { os: "ubuntu-latest",  arch: "armv7l", artifact_prefix: "arm"     }
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Build/Release Identiflix
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run publish

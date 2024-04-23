@@ -1,8 +1,16 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore
 import featured1 from '../../../public/assets/featured1.jpg'
+// @ts-ignore
 import featured2 from '../../../public/assets/featured2.jpg'
+// @ts-ignore
 import featured3 from '../../../public/assets/featured3.jpg'
+// @ts-ignore
 import featured4 from '../../../public/assets/featured4.jpg'
+// @ts-ignore
 import featured5 from '../../../public/assets/featured5.jpg'
+// @ts-ignore
+import auth0Logo from '../../../public/assets/auth0_logo_header.svg'
 import { NavLink } from 'react-router-dom'
 
 export default function() {
@@ -29,11 +37,8 @@ export default function() {
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:justify-between lg:px-8 lg:py-40">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
           <div className="mt-24 sm:mt-32 lg:mt-16">
-            <a href="#" className="inline-flex space-x-6">
-              <span
-                className="rounded-full bg-blue-600/10 px-3 py-1 text-sm font-semibold leading-6 text-blue-600 ring-1 ring-inset ring-blue-600/10">
-                Your favorite identity shows, now on your TV!
-              </span>
+            <a href="https://auth0.com" className="inline-flex space-x-4 align-middle" target="_blank">
+              <img src={auth0Logo} alt="Auth0 by Okta" />
             </a>
           </div>
           <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-100 sm:text-6xl">

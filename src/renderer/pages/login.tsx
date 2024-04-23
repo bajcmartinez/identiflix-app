@@ -48,10 +48,10 @@ export default function () {
               </p>
               <ul className="mt-4 max-w-xl space-y-4 text-base leading-7 text-gray-400 lg:max-w-none">
                 <li>
-                  1. On your computer or device, visit: {loginData?.verification_uri || 'loading...'}
+                  1. On your computer or device, visit: <pre className="inline-block ml-2 text-green-300">{loginData?.verification_uri || 'loading...'}</pre>
                 </li>
                 <li>
-                  2. Enter the following code: <pre>{loginData?.user_code || 'loading...'}</pre>
+                  2. Enter the following code: <pre className="inline-block ml-2 px-2 py-1 rounded bg-blue-200 text-black">{loginData?.user_code || 'loading...'}</pre>
                 </li>
               </ul>
               <div className="mt-10 flex items-center gap-x-6">

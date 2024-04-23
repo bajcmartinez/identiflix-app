@@ -13,10 +13,27 @@ import { rendererConfig } from './webpack.renderer.config';
 
 const config: ForgeConfig = {
   packagerConfig: {
+    name: 'Identiflix',
+    executableName: 'identiflix',
     asar: true,
   },
   rebuildConfig: {},
-  makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+  makers: [
+    new MakerSquirrel({}),
+    new MakerZIP({}, ['darwin']),
+    new MakerRpm({}, ['linux']),
+    new MakerDeb({}, ['linux'])
+  ],
+  publishers: [{
+    name: '@electron-forge/publisher-github',
+    config: {
+      repository: {
+        owner: 'bajcmartinez',
+        name: 'tmp-identiflix'
+      },
+      prerelease: true
+    }
+  }],
   plugins: [
     new AutoUnpackNativesPlugin({}),
     new WebpackPlugin({

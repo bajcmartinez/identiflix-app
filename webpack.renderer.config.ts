@@ -10,7 +10,7 @@ rules.push({
 });
 
 rules.push({
-  test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/,
+  test: /\.(?:ico|gif|svg|png|jpg|jpeg|webp)$/,
   include: [
     path.resolve(__dirname, "public/assets")
   ],
